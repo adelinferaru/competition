@@ -1,3 +1,13 @@
+#!/usr/bin/make
+
+SHELL = /bin/sh
+
+UID := $(shell id -u)
+GID := $(shell id -g)
+
+export UID
+export GID
+
 laravel_app := docker exec -it awesome-quotes-laravel.test-1
 pest := ./vendor/bin/pest
 
