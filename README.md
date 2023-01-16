@@ -9,10 +9,56 @@
 
 ## INSTALL DEV 
 
+### LINUX Environment
+
 - Clone repository
-- ```cd awesome-quotes```
+- ```cd competition```
 - run ```make dev```
 
+
+## API Docs
+
+###1) Create a new competition
+
+```POST api/v1/competition-management/competitions```
+
+Body Parameters:
+- ```name``` --> ```string``` ```required``` The competition's name
+- ```max_players``` --> ```int``` ```required``` The max number of players that can play
+
+
+###2) Create new player
+
+```POST api/v1/player-management/players```
+
+Body Parameters:
+- ```user_name``` --> ```string``` ```required``` The player's user name
+
+###3) Add a new player in a competition
+
+```POST api/v1/competition-management/competitions/{competitionId}/enroll-player/{playerId}```
+
+URL Parameters:
+- ```competitionId``` --> ```string``` ```required``` The competition's id
+- ```playerId``` --> ```string``` ```required``` The player's id
+
+###4) Increments a player's score (+1) in a competition
+
+```POST api/v1/competition-management/competitions/{competitionId}/increase-score/{playerId}```
+
+URL Parameters:
+- ```competitionId``` --> ```string``` ```required``` The competition's id
+- ```playerId``` --> ```string``` ```required``` The player's id
+
+###5) Return a competition's name & players ranking
+
+```GET api/v1/competition-management/competitions/{competitionId}```
+
+URL Parameters:
+- ```competitionId``` --> ```string``` ```required``` The competition's id
+
+Query parameters:
+- ```orderByScore```  --> ```string``` ```optional``` Change ordering of players by score. Possible values: 'asc', 'desc'. If omitted the default value is 'desc'.
 
 ## About Laravel
 

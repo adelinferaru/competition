@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker exec -it awesome-quotes-laravel.test-1 /bin/bash
+docker exec -it competition-laravel.test-1 /bin/bash

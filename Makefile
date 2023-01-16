@@ -8,7 +8,7 @@ GID := $(shell id -g)
 export UID
 export GID
 
-laravel_app := docker exec -it awesome-quotes-laravel.test-1
+laravel_app := docker exec -it competition-laravel.test-1
 pest := ./vendor/bin/pest
 
 .PHONY: dev

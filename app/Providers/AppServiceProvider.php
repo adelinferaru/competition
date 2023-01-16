@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use App\QuoteSources\IQuoteSource;
-use App\QuoteSources\LocalQuotes;
+use App\GreenHorse\GreenHorseCompetition;
+use App\GreenHorse\GreenHorsePlayer;
+use App\Interfaces\GenericCompetitionInterface;
+use App\Interfaces\GenericPlayerInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,9 +17,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $defaultQuotesSource = config('quotes.default_source');
-        $quotesSourceConcreteClass = config('quotes.sources.' . $defaultQuotesSource . '.class');
-        $this->app->bind('App\QuoteSources\IQuoteSource', $quotesSourceConcreteClass);
+        // Bind default contract for Generic Competition
+        $this->app->bind(GenericCompetitionInterface::class, GreenHorseCompetition::class);
+
+        // Bind default contract for Generic Player
+        $this->app->bind(GenericPlayerInterface::class, GreenHorsePlayer::class);
     }
 
     /**
