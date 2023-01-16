@@ -7,6 +7,12 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# Competition Sample (Laravel + Redis)
+
+- Laravel Framework 9.41.0 
+- ```"php": "^8.0.2"```,
+- ```"laravel/framework": "9.41"```
+
 ## INSTALL DEV 
 
 ### LINUX Environment
